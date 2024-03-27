@@ -1,14 +1,18 @@
 import { NavigationContainer } from "@react-navigation/native";
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { createStackNavigator } from "@react-navigation/stack";
+import { StyleSheet } from "react-native";
+import PageA from "./components/PageA";
+import PageB from "./components/PageB";
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <View style={styles.container}>
-        <Text>Open up App.tsx to start working on your app!</Text>
-        <StatusBar style="auto" />
-      </View>
+      <Stack.Navigator initialRouteName="PageA">
+        <Stack.Screen name="PageA" component={PageA} />
+        <Stack.Screen name="PageB" component={PageB} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
