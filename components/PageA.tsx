@@ -10,7 +10,10 @@ const PageA = (props: Props) => {
   return (
     <View style={styles.container}>
       <Text>PageA</Text>
-      <Text onPress={() => navigation.push("PageB")}>Go to PageB</Text>
+      {/* <Text onPress={() => navigation.push("PageB")}>Go to PageB</Text> */}
+      <Text onPress={() => navigation.push("BigStateVars")}>
+        Go to Big State Vars Page
+      </Text>
     </View>
   );
 };
