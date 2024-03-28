@@ -10,9 +10,17 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="PageA">
-        <Stack.Screen name="PageA" component={PageA} />
-        <Stack.Screen name="PageB" component={PageB} />
+      <Stack.Navigator initialRouteName="PageA" detachInactiveScreens={true}>
+        <Stack.Screen
+          name="PageA"
+          component={PageA}
+          options={{ detachPreviousScreen: true }}
+        />
+        <Stack.Screen
+          name="PageB"
+          component={PageB}
+          options={{ detachPreviousScreen: true }}
+        />
         <Stack.Screen name="BigStateVars" component={BigStateVars} />
       </Stack.Navigator>
     </NavigationContainer>
